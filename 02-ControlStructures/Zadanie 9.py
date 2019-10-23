@@ -1,4 +1,4 @@
-a = int(input("Wprowadź liczbe: "))
+a = 4
 
 if a%2!=0:
     print("Liczba %s jest nieparzysta" % (a))
