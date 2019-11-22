@@ -1,27 +1,31 @@
 
-def czytajWspolczynniki(a,b,c):
+def czytajWspolczynniki():
+    print("Wpisz współczynniki wzoru: ax+bx+c=0")
+    a = int(input("Wczytaj współczynnik a: "))
+    b = int(input("Wczytaj współczynnik b: "))
+    c = int(input("Wczytaj współczynnik c: "))
     return [a,b,c]
 
-def obliczDelte(a,b,c):
-    return (b**2+4*a*c)/2
+def obliczDelte(wspolczynniki):
+    return (wspolczynniki[1]**2)-(4*wspolczynniki[0]*wspolczynniki[2])
 
 
-def obliczPierwiastki(a,b,c):
-    delta = 0
-    delta = (b**2)-(4*a*c)
+def obliczPierwiastki(wspolczynniki):
+    from math import sqrt
+    delta = obliczDelte(wspolczynniki)
     if delta>0:
-        x1 = (delta-b/2*a)
-        x2 = (delta+b/2*a)
+        x1 = ((-1)*wspolczynniki[1]-sqrt(delta))/(2*wspolczynniki[0])
+        x2 = ((-1)*wspolczynniki[1]+sqrt(delta))/(2*wspolczynniki[0])
         Pierwiastki = [x1,x2]
-        return print(Pierwiastki) 
+        return Pierwiastki 
     elif delta == 0:
-        x1 = (-b/2*a)
+        x1 = (-wspolczynniki[1]/2*wspolczynniki[0])
         Pierwiastki = [x1]
         return Pierwiastki 
     elif delta < 0:
         Pierwiastki = []
         return Pierwiastki 
     
-def wyswietlPierwiastki(x1,x2):
-        return print(x1,x2)
+def wyswietlPierwiastki(wynik_rownania):
+    return print(f"Pierwiastki tego rownania to: {wynik_rownania[0]}, {wynik_rownania[1]}")
         

@@ -1,7 +1,5 @@
-import QuadraticEquation
+import QuadraticEquation as qe
 
-a = input("Wczytaj współczynnik a: ")
-b = input("Wczytaj współczynnik b: ")
-c = input("Wczytaj współczynnik c: ")
-
-QuadraticEquation.obliczPierwiastki(a,b,c)
+wspolczynniki = qe.czytajWspolczynniki()
+wynik_rownania = qe.obliczPierwiastki(wspolczynniki)
+qe.wyswietlPierwiastki(wynik_rownania)
