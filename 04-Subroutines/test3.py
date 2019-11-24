@@ -18,5 +18,16 @@ import re
         numery = re.findall("\d",string)
         for i in range(len(numery)):
             suma+=int(numery[i])
+            
+import csv
+import statistics 
+with open('employees.csv', newline='') as f:
+    reader = csv.reader(f)
+    i = 0
+    for row in reader:
+        if i == 0:
+            print(f"X  {row[0].upper()}  {row[1].upper()}  {row[2].upper()}  {row[3].upper()}")
+            print("="*60)
+            i+=1
         
     
