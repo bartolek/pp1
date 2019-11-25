@@ -6,6 +6,9 @@ import re
     cyfry = re.findall('\d{2}',komunikat)
     suma = 0
     
+    cyfry = re.findall('\d[0-8]',komunikat)
+    suma = 0
+    
     with open("numbers.txt", "r") as file:
     for line in file:
         liczby.append(int(line))
